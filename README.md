@@ -55,7 +55,7 @@ git init
 这会在 MyKnowledgeRepo/ 文件夹下生成一个隐藏的 .git 文件夹，Git 的“大脑”就此诞生。  
 在 GitHub 上创建远程仓库：  
 登录 GitHub。  
-点击右上角 + 号 -> New repository。  
+点击右上角 + 号 --> New repository。  
 填写仓库名称（例如 MyKnowledgeRepo），选择 Public (公开) 或 Private (私有)。  
 不要勾选 “Add a README file”、“Add .gitignore”、“Choose a license”，我们会在本地手动创建。  
 点击 Create repository。  
@@ -63,12 +63,18 @@ git init
 ```Bash
 git remote add origin https://github.com/你的用户名/MyKnowledgeRepo.git
 ```
-** origin **是远程仓库的别名，可以自定义，但通常都用 origin  
+**origin**是远程仓库的别名，可以自定义，但通常都用 origin  
 首次提交基础文件并推送到 GitHub： 在 MyKnowledgeRepo/ 文件夹下创建以下文件：  
 README.md：用 MarkDown 写下你的学习宣言、知识库概览。  
 LICENSE：选择一个开源许可证（如 MIT License），从网上复制模板内容  
 .gitignore：忽略不需要提交的文件类型，例如：# 学习过程中产生的临时文件、编译产物*.aux*.log*.blg*.out# IDE 或编辑器配置文件.vscode/.idea/*.swp  
-然后执行：Bashgit add .git commit -m "feat: Initialize my knowledge repository with README, LICENSE, and .gitignore"git push -u origin main# -u 参数会设置 main 分支的默认上游分支，以后可以直接 git push 或 git pull至此，你的知识仓库就建立完毕，并同步到了 GitHub。  
+然后执行：
+```Bash
+git add .git commit -m "feat: Initialize my knowledge repository with README, LICENSE, and .gitignore"
+git push -u origin main
+ # -u 参数会设置 main 分支的默认上游分支，以后可以直接 git push 或 git pull至此，
+```
+你的知识仓库就建立完毕，并同步到了 GitHub。  
 ### 3.3 日常学习操作流程
 创建学习分支 (开始一个新专题/章节的学习)：当你开始学习一个新的章节或一个独立的知识点时，从 main 分支拉出一个新分支。
 ```Bash
@@ -87,7 +93,10 @@ tips: 命名建议： study/科目-专题-细节 或 feat/知识点-名称。
 插入图片： 如果有手绘图或示意图，放入 diagrams/ 文件夹，并在笔记中引用：![我的力学图](diagrams/force_diagram.png)。  
 修改和完善： 每次对笔记的补充、对习题解法的改进、对概念理解的修正，都直接在文件中修改。  
 提交你的学习成果 (Commit)：每当你完成一个有意义的学习单元（比如：理解了一个小概念，完成了一道习题，推导了一个公式，修正了一个错误理解），就进行一次提交。  
-添加变更：Bashgit add . # 添加所有修改过的文件# 或者 git add notes/your_note.md solutions/your_solution.md # 精确添加  
+添加变更：
+```Bash
+git add . # 添加所有修改过的文件# 或者 git add notes/your_note.md solutions/your_solution.md # 精确添加  
+```
 编写提交信息 (Commit Message)： 这是最关键的！用清晰、简明、有意义的语言总结本次提交的学习成果。  
 格式： 类型: 简短描述  
 类型：  
